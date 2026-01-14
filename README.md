@@ -1,0 +1,6 @@
+## VS Code简易网页(webview2)扩展
+- 网址栏
+- 网页刷新按钮
+- 可配置(扩展配置页)的网页收藏栏
+
+配合status bar bottom类的扩展激活命令`extension.openWebview`快捷打开网页

@@ -1,0 +1,39 @@
+{
+  "name": "simple-webview-browser",
+  "displayName": "Simple Webview Browser",
+  "description": "A simple in-VSCode browser with bookmarks and hard refresh",
+  "version": "0.0.4",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:extension.openWebview"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openWebview",
+        "title": "Open Simple Webview Browser"
+      }
+    ],
+    "configuration": {
+      "title": "Simple Webview Browser",
+      "properties": {
+        "simpleWebviewBrowser.bookmarks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[^|]+\\|https?://.+",
+            "patternErrorMessage": "格式应为：名称|网址（例如：Google|https://google.com）"
+          },
+          "default": [
+            "Google|https://www.google.com",
+            "GitHub|https://github.com",
+            "VS Code|https://code.visualstudio.com"
+          ],
+          "description": "自定义书签列表，每行格式：名称|完整网址（必须以 http:// 或 https:// 开头）"
+        }
+      }
+    }
+  }
+}
